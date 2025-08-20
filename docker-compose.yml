@@ -1,0 +1,39 @@
+services:
+  # Laravel Backend (API)
+  backend:
+    build:
+      context: ./be-iyziExperience
+      dockerfile: Dockerfile
+    container_name: laravel-api
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./be-iyziExperience:/var/www/html
+      - /var/www/html/vendor
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+    networks:
+      - app-network
+
+  # React Frontend
+  frontend:
+    build:
+      context: ./iyziExperience
+      dockerfile: Dockerfile
+    container_name: react-frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./iyziExperience:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - REACT_APP_API_URL=http://laravel-api:4000
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
