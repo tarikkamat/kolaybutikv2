@@ -26,12 +26,12 @@ export const TourProvider = ({ children }) => {
         '/store': {
             storageKey: 'storeTourCompleted',
             title: 'Mağaza Turu',
-            steps: () => import('../../pages/Store/steps').then(module => module.default)
+            steps: () => import('../../features/store/steps').then(module => module.default)
         },
         '/checkout': {
             storageKey: 'checkoutTourCompleted',
             title: 'Ödeme Sayfası Turu',
-            steps: () => import('../../pages/Checkout/steps').then(module => module.default)
+            steps: () => import('../../features/checkout/steps').then(module => module.default)
         },
         // Add more page configurations here
         // '/dashboard': {
