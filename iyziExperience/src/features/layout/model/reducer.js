@@ -14,7 +14,7 @@ import {
   preloaderTypes,
   sidebarVisibilitytypes,
   topbarThemeTypes
-} from "../../Components/constants/layout";
+} from "../../../Components/constants/layout";
 
 export const initialState = {
     layoutType: layoutTypes.HORIZONTAL,
