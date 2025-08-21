@@ -1,5 +1,5 @@
 // Front
-export * from "./layouts/thunk";
+export * from "../features/layout/model/thunk";
 
 // Cart
-export * from "./cart/thunk";
+export * from "../features/cart/model/thunk";

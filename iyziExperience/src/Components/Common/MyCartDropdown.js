@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {Col, Dropdown, DropdownMenu, DropdownToggle, Row} from 'reactstrap'
 import SimpleBar from "simplebar-react"
-import {removeFromCart} from '../../slices/cart/thunk'
+import {removeFromCart} from '../../slices/thunks'
 
 const MyCartDropdown = () => {
     const dispatch = useDispatch()
