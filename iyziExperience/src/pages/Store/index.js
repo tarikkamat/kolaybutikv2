@@ -5,7 +5,7 @@ import ToastAlert from "../../Components/Common/ToastAlert"
 import Options from "./Options";
 import Market from "./Market";
 import {StandartProducts} from "./market_data";
-import Subscription from "../subscription";
+import Subscription from "../Subscription";
 import { useGlobalTour } from "../../Components/Context/TourContext";
 
 const Store = () => {

@@ -48,7 +48,7 @@ const SavedCardForm = ({paymentRequest, onPaymentStart, onPaymentComplete}) => {
             };
 
             // Doğrudan auth işlemi
-            const authResponse = await fetch("http://localhost:4000/api/payment/initialize", {
+            const authResponse = await fetch("http://localhost:8000/api/payment/initialize", {
                 method: "POST",
                 headers: {
                     "Payment-Method": "SavedCard",

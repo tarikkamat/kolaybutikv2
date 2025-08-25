@@ -1,6 +1,6 @@
 import React, {useEffect, useState, useRef, useCallback} from "react";
 
-const QuickPwiForm = ({paymentRequest, paymentState = {}, onPaymentStart, onPaymentComplete}) => {
+const CheckoutForm = ({paymentRequest, paymentState = {}, onPaymentStart, onPaymentComplete}) => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [isInitialized, setIsInitialized] = useState(false);
@@ -167,17 +167,16 @@ const QuickPwiForm = ({paymentRequest, paymentState = {}, onPaymentStart, onPaym
                 cleanup();
             }
 
-            // Callback URL'i backend'e yönlendir ve frontend'e yönlendirme parametresi ekle
             const frontendCallbackUrl = window.location.origin + "/checkout/callback";
-            const backendCallbackUrl = new URL("http://localhost:4000/api/payment/callback");
-            backendCallbackUrl.searchParams.append('method', 'QuickPwi');
+            const backendCallbackUrl = new URL("http://localhost:8000/api/payment/callback");
+            backendCallbackUrl.searchParams.append('method', 'CheckoutForm');
             backendCallbackUrl.searchParams.append('redirect', frontendCallbackUrl);
             paymentRequest['callbackUrl'] = backendCallbackUrl.toString();
 
-            const response = await fetch("http://localhost:4000/api/payment/initialize", {
+            const response = await fetch("http://localhost:8000/api/payment/initialize", {
                 method: "POST",
                 headers: {
-                    "Payment-Method": "QuickPwi",
+                    "Payment-Method": "CheckoutForm",
                     "Content-Type": "application/json",
                     "Accept": "application/json",
                 },
@@ -283,7 +282,7 @@ const QuickPwiForm = ({paymentRequest, paymentState = {}, onPaymentStart, onPaym
                 ref={formContainer}
                 id="iyzipay-checkout-form"
                 className="responsive"
-                style={{minHeight: '150px'}}
+                style={{minHeight: '400px'}}
             />
 
             {isLoading && (
@@ -302,7 +301,7 @@ const QuickPwiForm = ({paymentRequest, paymentState = {}, onPaymentStart, onPaym
                     <div className="spinner-border text-primary" role="status">
                         <span className="visually-hidden">Yükleniyor...</span>
                     </div>
-                    <p className="mt-2 text-muted">Kayıtlı kartların hazırlanıyor...</p>
+                    <p className="mt-2 text-muted">Ödeme formu hazırlanıyor...</p>
                     <small className="text-muted">Bu işlem birkaç saniye sürebilir</small>
                 </div>
             )}
@@ -314,4 +313,4 @@ const QuickPwiForm = ({paymentRequest, paymentState = {}, onPaymentStart, onPaym
     );
 };
 
-export default QuickPwiForm;
+export default CheckoutForm;

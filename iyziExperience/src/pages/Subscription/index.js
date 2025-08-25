@@ -1,4 +1,4 @@
-import Plans from "../store/Plans";
+import Plans from "../Store/Plans";
 import React, {useState} from "react"
 import {ButtonGroup, Col, DropdownItem, DropdownMenu, DropdownToggle, Row, UncontrolledDropdown} from "reactstrap";
 import ProductSettingsModalList from "./ProductSettingsModalList";

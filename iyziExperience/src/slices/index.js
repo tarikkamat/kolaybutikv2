@@ -1,6 +1,6 @@
 import {combineReducers} from "redux";
-import LayoutReducer from "../features/layout/model/reducer";
-import CartReducer from "../features/cart/model/reducer";
+import LayoutReducer from "./layouts/reducer";
+import CartReducer from "./cart/reducer";
 
 const rootReducer = combineReducers({
     Layout: LayoutReducer,

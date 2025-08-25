@@ -20,7 +20,7 @@ export function buildPaymentRequest({cart, AddressData, BillingData, subTotal, t
         currency: "TRY",
         basketId: "B67832",
         paymentGroup: "PRODUCT",
-        callbackUrl: "http://localhost:4000/api/payment/callback",
+        callbackUrl: "http://localhost:8000/api/payment/callback",
         buyer: {
             id: "BY789",
             name: BillingData.firstName,
@@ -70,7 +70,7 @@ export function buildPaymentRequest2({cart, AddressData, BillingData, subTotal, 
         currency: "TRY",
         basketId: "B67832",
         paymentGroup: "PRODUCT",
-        callbackUrl: "http://localhost:4000/api/payment/callback",
+        callbackUrl: "http://localhost:8000/api/payment/callback",
         buyer: {
             id: "BY789",
             name: BillingData.firstName,

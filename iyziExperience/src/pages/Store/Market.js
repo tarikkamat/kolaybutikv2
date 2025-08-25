@@ -1,7 +1,7 @@
 import {Card, CardBody, Col, Row} from "reactstrap";
 import Rating from "react-rating";
 import React from "react";
-import {addToCart} from "../../slices/thunks";
+import {addToCart} from "../../slices/cart/thunk";
 import ToastAlert from "../../Components/Common/ToastAlert";
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";

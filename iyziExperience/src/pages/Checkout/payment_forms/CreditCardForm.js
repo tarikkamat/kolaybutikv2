@@ -22,7 +22,7 @@ const CreditCardForm = ({paymentRequest, onPaymentStart, onPaymentComplete}) => 
             onPaymentStart?.();
 
             // Doğrudan auth işlemi
-            const authResponse = await fetch("http://localhost:4000/api/payment/initialize", {
+            const authResponse = await fetch("http://localhost:8000/api/payment/initialize", {
                 method: "POST",
                 headers: {
                     "Payment-Method": "CreditCard",

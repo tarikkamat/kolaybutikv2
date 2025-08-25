@@ -19,7 +19,7 @@ const PaymentCallback = () => {
                 }
 
                 // Backend'den ödeme sonucunu al
-                const response = await fetch('http://localhost:4000/api/payment/retrieve', {
+                const response = await fetch('http://localhost:8000/api/payment/retrieve', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

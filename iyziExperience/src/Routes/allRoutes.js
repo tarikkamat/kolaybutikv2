@@ -1,9 +1,9 @@
 import React from "react";
 import {Navigate} from "react-router-dom";
-import Store from "../features/store";
-import Checkout from "../features/checkout";
-import Links from "../features/links";
-import PaymentCallback from "../features/checkout/components/PaymentCallback";
+import Store from "../pages/Store";
+import Checkout from "../pages/Checkout";
+import Links from "../pages/Links";
+import PaymentCallback from "../pages/Checkout/components/PaymentCallback";
 
 const publicRoutes = [
     {path: "/checkout", component: <Checkout/>},
