@@ -30,7 +30,7 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
-      - REACT_APP_API_URL=http://laravel-api:4000
+      - REACT_APP_API_URL=http://localhost:4000
     networks:
       - app-network
 
