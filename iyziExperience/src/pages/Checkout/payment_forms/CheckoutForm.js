@@ -168,12 +168,12 @@ const CheckoutForm = ({paymentRequest, paymentState = {}, onPaymentStart, onPaym
             }
 
             const frontendCallbackUrl = window.location.origin + "/checkout/callback";
-            const backendCallbackUrl = new URL("http://localhost:8000/api/payment/callback");
+            const backendCallbackUrl = new URL("http://localhost:4000/api/payment/callback");
             backendCallbackUrl.searchParams.append('method', 'CheckoutForm');
             backendCallbackUrl.searchParams.append('redirect', frontendCallbackUrl);
             paymentRequest['callbackUrl'] = backendCallbackUrl.toString();
 
-            const response = await fetch("http://localhost:8000/api/payment/initialize", {
+            const response = await fetch("http://localhost:4000/api/payment/initialize", {
                 method: "POST",
                 headers: {
                     "Payment-Method": "CheckoutForm",
